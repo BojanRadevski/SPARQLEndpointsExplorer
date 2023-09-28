@@ -1,0 +1,35 @@
+<input type="text" #artistInput (keyup.enter)="onSearch(artistInput.value)" placeholder="Enter Artist Name">
+   
+
+<nz-table *ngIf="showData" #nzTable [nzPageSize]="7" [nzData]="booksBindings" nzTableLayout="fixed" [nzScroll]="{ x: '1150px', y: '500px' }">
+    <thead>
+      <tr>
+        <th nzCustomFilter>
+            Artist 
+          <nz-filter-trigger [(nzVisible)]="visible" [nzActive]="searchValue.length > 0" [nzDropdownMenu]="menu">
+            <span nz-icon nzType="search"></span>
+          </nz-filter-trigger>
+        </th>
+        <th>Birth Date</th>
+        <th>Birth Place</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of nzTable.data">
+        <td>{{ data.artist.value }}</td>
+        <td>{{ data.birthdate.value }}</td>
+        <td>{{ data.birthplace.value }}</td>
+        <td>{{ data.description.value }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+  <nz-dropdown-menu #menu="nzDropdownMenu">
+    <div class="ant-table-filter-dropdown">
+      <div class="search-box">
+        <input type="text" nz-input placeholder="Search name" [(ngModel)]="searchValue" />
+        <button nz-button nzSize="small" nzType="primary" (click)="search()" class="search-button">Search</button>
+        <button nz-button nzSize="small" (click)="reset()">Reset</button>
+      </div>
+    </div>
+  </nz-dropdown-menu>

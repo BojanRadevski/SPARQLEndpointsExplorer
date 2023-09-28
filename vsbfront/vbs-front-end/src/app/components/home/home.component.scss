@@ -1,0 +1,55 @@
+.logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+nz-header {
+  background: #fff;
+  padding: 0;
+}
+
+nz-content {
+  margin: 0 16px;
+}
+
+nz-breadcrumb {
+  margin: 16px 0;
+}
+
+.inner-content {
+  padding: 24px;
+  background: #fff;
+  min-height: 360px;
+  height: 80vh;
+}
+
+nz-footer {
+  text-align: center;
+}
+.terms-conditions-container {
+  //   overflow-y: scroll;
+  //   height: 308px;
+
+  .description {
+    margin: 0;
+    /* font-family: "Inter"; */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 22px;
+    color: #000000;
+    padding: 80px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.title-form {
+  //   font-family: "Inter";
+  font-weight: 700;
+  //   font-size: 3.09vh;
+  line-height: 36px;
+  color: #000000;
+  text-align: center;
+  padding-top: 3.09vh;
+}

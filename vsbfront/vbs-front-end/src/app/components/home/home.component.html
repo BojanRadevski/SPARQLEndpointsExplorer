@@ -1,0 +1,78 @@
+<!-- <input type="text" #artistInput (keyup.enter)="onSearch(artistInput.value)" placeholder="Enter Artist Name">
+   
+<ng-container *ngIf="showData">
+   <div *ngFor="let result of artistData">
+    <p>Description: {{ result.description.value }}</p>
+  </div>
+</ng-container>
+  
+<button nz-button nzType="primary">Primary</button> -->
+<nz-layout style="overflow: hidden;">
+    <nz-sider nzCollapsible nzWidth="200px" style="height: 100vh;">
+      <div class="logo"><p style="color: white; padding: 5px; padding-left: 18px;"></p></div>
+      <ul nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-menu-item>
+          <span nz-icon nzType="pie-chart"></span>
+          <span (click)="openMovies()">Books</span>
+          <!-- <button (click)="openMovies()">Option 1 button</button> -->
+        </li>
+        <li nz-menu-item>
+          <span nz-icon nzType="desktop"></span>
+          <span (click)="openArtists()">Artists</span>
+        </li>
+        <li nz-menu-item>
+            <span nz-icon nzType="desktop"></span>
+            <span (click)="openCars()">Cars</span>
+          </li>
+          <li nz-menu-item>
+            <span nz-icon nzType="desktop"></span>
+            <span (click)="openCitis()">Cities</span>
+          </li>
+          <li nz-menu-item>
+            <span nz-icon nzType="desktop"></span>
+            <span (click)="openCountries()">Countries</span>
+          </li>
+        
+      </ul>
+    </nz-sider>
+    <nz-layout>
+      <nz-header></nz-header>
+      <nz-content>
+        <nz-breadcrumb>
+          <nz-breadcrumb-item>User</nz-breadcrumb-item>
+          <nz-breadcrumb-item>Bojan Radevski 194009</nz-breadcrumb-item>
+        </nz-breadcrumb>
+        <div *ngIf="show" class="inner-content">
+            
+            <div class="terms-conditions-container ">
+            <h1 class="title-form" nz-typography>Welcome to SPARQL Endpoint Explorer</h1>
+    <p class="description">
+        What is the SPARQL Query Language?
+        The SPARQL Query Language is a Declarative Query Language (like SQL) for performing Data Manipulation and Data Definition operations on Data represented as a collection of RDF Language sentences/statements.
+        
+        Every SPARQL Query has a Solution Modifier (or head) and a Query Body. The Solution Modifier provides the basis for categorizing different types of SPARQL Query solutions. The Query Body comprises a collection of of RDF statement patterns (represented using Turtle Notation) that represent the entity relationships to which a query is scoped.
+        
+        
+    </p>
+    </div>
+
+        </div>
+        <div *ngIf="showArtists" class="inner-content">   
+            <app-artists></app-artists>
+        </div>
+        <div *ngIf="showBooks" class="inner-content">   
+            <app-books></app-books>
+        </div>
+        <div *ngIf="showCars" class="inner-content">   
+            <app-cars></app-cars>
+        </div>
+        <div *ngIf="showCities" class="inner-content">   
+            <app-cities></app-cities>
+        </div>
+        <div *ngIf="showCountries" class="inner-content">   
+            <app-countries></app-countries>
+        </div>
+      </nz-content>
+      <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+    </nz-layout>
+  </nz-layout>
